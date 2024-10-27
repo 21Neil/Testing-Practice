@@ -28,16 +28,17 @@ function checkIsLetter(num) {
   return upperCase || lowerCaseCase
 }
 
-function isUpperCase(num) {
-  return num >= 65 && num <= 90
-}
-
-function isLowerCase(num) {
-  return num >= 97 && num <= 122
-}
-
 export function caesarCipher(str, key) {
   const charCodeArr = str.split('').map(char => char.charCodeAt(0))
+  
+  function isUpperCase(num) {
+    return num >= 65 && num <= 90
+  }
+  
+  function isLowerCase(num) {
+    return num >= 97 && num <= 122
+  }
+
   const caesarArr = charCodeArr.map(num => {
     if(isUpperCase(num)) {
       num += key
@@ -51,5 +52,6 @@ export function caesarCipher(str, key) {
     }
     return num
   });
+
   return String.fromCharCode(...caesarArr);
 }
