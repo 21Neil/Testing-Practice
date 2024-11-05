@@ -30,7 +30,7 @@ function checkIsLetter(num) {
 
 export function caesarCipher(str, key) {
   const charCodeArr = str.split('').map(char => char.charCodeAt(0))
-  
+
   function isUpperCase(num) {
     return num >= 65 && num <= 90
   }
@@ -54,4 +54,17 @@ export function caesarCipher(str, key) {
   });
 
   return String.fromCharCode(...caesarArr);
+}
+
+export function analyzeArray(arr) {
+  const length = arr.length
+  function average(arr) {
+    return arr.reduce((acc, cur) => acc + cur) / length
+  }
+  return ({
+    average: average(arr),
+    min: Math.min(...arr),
+    max: Math.max(...arr),
+    length
+  })
 }

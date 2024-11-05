@@ -3,6 +3,7 @@ import {
   reverseString,
   calculator,
   caesarCipher,
+  analyzeArray,
 } from'./testing_practice'
 
 test('neil->Neil', () => {
@@ -40,5 +41,16 @@ describe('caesarCipher', () => {
   })
   test('Hello, World!->Khoor, Zruog!', () => {
     expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!')
+  })
+})
+
+describe('analyzeArray', () => {
+  test('[1,8,3,4,2,6]', () => {
+    expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+      average: 4,
+      min: 1,
+      max: 8,
+      length: 6
+    })
   })
 })
